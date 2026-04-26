@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Citrapps</title>
+  <meta name="description" content="Citrapps builds simple, focused digital products." />
+
+  <style>
+    :root {
+      --background: #f6f4ef;
+      --surface: #ffffff;
+      --text: #171717;
+      --muted: #666666;
+      --border: #d8d3c8;
+      --accent: #b85c24;
+      --accent-dark: #7d3a14;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--background);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 72px 24px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+      padding: 36px 0 84px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 680px;
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      font-weight: 750;
+    }
+
+    .hero-text {
+      margin: 28px 0 0;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--text);
+      background: var(--text);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #ffffff;
+    }
+
+    .button.secondary:hover {
+      background: var(--surface);
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .hero-panel {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 28px;
+    }
+
+    .panel-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .panel-title {
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .panel-text {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .panel-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .panel-list span:first-child {
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: flex-end;
+      margin-bottom: 32px;
+    }
+
+    .section-kicker {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    .section-description {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .product-meta {
+      padding: 32px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .tag {
+      width: fit-content;
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .product-name {
+      font-size: 40px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 750;
+    }
+
+    .product-content {
+      padding: 32px;
+    }
+
+    .product-content p {
+      margin: 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+    }
+
+    .feature {
+      padding: 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .feature span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .note {
+      border: 1px solid var(--border);
+      background: transparent;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: flex-end;
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 860px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .main {
+        padding-top: 42px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-bottom: 56px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-meta {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feature:nth-child(2) {
+        border-right: none;
+      }
+
+      .feature:nth-child(1),
+      .feature:nth-child(2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .note {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .header-inner,
+      .main,
+      .footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature,
+      .feature:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feature:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/">Citrapps</a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="#products">Products</a>
+          <a href="https://legal.citrapps.com/">Legal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Independent software studio</span>
+
+          <h1>Simple, focused digital products.</h1>
+
+          <p class="hero-text">
+            Citrapps builds practical mobile applications with clean interfaces,
+            useful features, and a focus on everyday value.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#products">View product</a>
+            <a class="button secondary" href="https://legal.citrapps.com/">Legal Center</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Company summary">
+          <div class="panel-label">Citrapps / 2026</div>
+
+          <div class="panel-title">
+            Software products for focused use cases.
+          </div>
+
+          <p class="panel-text">
+            We design small, purposeful applications instead of crowded,
+            complicated platforms.
+          </p>
+
+          <ul class="panel-list">
+            <li>
+              <span>Focus</span>
+              <strong>Mobile apps</strong>
+            </li>
+            <li>
+              <span>Approach</span>
+              <strong>Simple design</strong>
+            </li>
+            <li>
+              <span>First product</span>
+              <strong>idiomed</strong>
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="section" id="products">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Product</div>
+            <h2>Our first product</h2>
+          </div>
+
+          <p class="section-description">
+            We are starting with a medical education product built for students
+            who need structured, practical study tools.
+          </p>
+        </div>
+
+        <article class="product-card">
+          <div class="product-meta">
+            <span class="tag">Medical education app</span>
+            <div class="product-name">idiomed</div>
+          </div>
+
+          <div class="product-content">
+            <p>
+              idiomed is a mobile educational platform for medical students,
+              offering question-based learning, flashcards, clinical case-style
+              study tools, and progress tracking.
+            </p>
+
+            <div class="feature-grid" aria-label="idiomed features">
+              <div class="feature">
+                <strong>Questions</strong>
+                <span>Question-based learning for exam preparation.</span>
+              </div>
+
+              <div class="feature">
+                <strong>Flashcards</strong>
+                <span>Fast review tools for repeated practice.</span>
+              </div>
+
+              <div class="feature">
+                <strong>Cases</strong>
+                <span>Clinical case-style learning experiences.</span>
+              </div>
+
+              <div class="feature">
+                <strong>Progress</strong>
+                <span>Study tracking and performance overview.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="note">
+          <div>
+            <div class="section-kicker">Next</div>
+            <h2>More products coming soon.</h2>
+          </div>
+
+          <p>
+            Citrapps will continue developing focused apps with simple
+            interfaces, accessible design, and practical use cases.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <strong>Citrapps</strong><br />
+        © 2026 Citrapps. All rights reserved.<br />
+        <a href="mailto:contact@citrapps.com">contact@citrapps.com</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://legal.citrapps.com/privacy.html">Privacy Policy</a>
+        <a href="https://legal.citrapps.com/terms.html">Terms</a>
+        <a href="https://legal.citrapps.com/kvkk.html">KVKK</a>
+        <a href="https://legal.citrapps.com/eula.html">EULA</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
