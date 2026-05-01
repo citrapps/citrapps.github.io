@@ -178,6 +178,25 @@
       background: var(--surface);
     }
 
+    .product-card-link {
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .product-card-link:hover {
+      border-color: var(--accent);
+      background: #fbfaf7;
+    }
+
+    .product-card-link:hover .product-name {
+      color: var(--accent);
+    }
+
+    .product-card-link:hover .product-visual {
+      background-color: #e7e2d8;
+    }
+
     .product-visual {
       min-height: 420px;
       border-right: 1px solid var(--border);
@@ -215,12 +234,30 @@
       line-height: 1;
       letter-spacing: -0.06em;
       font-weight: 750;
+      transition: color 0.15s ease;
     }
 
     .product-text {
       color: var(--muted);
       font-size: 17px;
       max-width: 560px;
+    }
+
+    .product-cta {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 4px;
+      padding: 10px 13px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 650;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .product-card-link:hover .product-cta {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .feature-list {
@@ -361,6 +398,11 @@
       .feature-list {
         grid-template-columns: 1fr;
       }
+
+      .product-cta {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -389,7 +431,7 @@
       </p>
 
       <div class="hero-actions">
-        <a class="button" href="#products">View products</a>
+        <a class="button" href="#products">View Products</a>
         <a class="button secondary" href="https://legal.citrapps.com/">Legal Center</a>
       </div>
     </section>
@@ -407,7 +449,7 @@
         </div>
       </div>
 
-      <article class="product-card">
+      <a class="product-card product-card-link" href="https://www.citrapps.com/idiomed/" aria-label="Open idiomed product page">
         <div class="product-visual" aria-label="idiomed visual"></div>
 
         <div class="product-content">
@@ -421,6 +463,8 @@
               offering question-based learning, flashcards, clinical case-style
               study tools, and progress tracking.
             </div>
+
+            <span class="product-cta">View idiomed page →</span>
           </div>
 
           <div class="feature-list">
@@ -445,7 +489,7 @@
             </div>
           </div>
         </div>
-      </article>
+      </a>
     </section>
 
     <section class="section">
@@ -475,10 +519,10 @@
     </div>
 
     <div class="footer-links">
-      <a href="https://legal.citrapps.com/privacy.html">privacy policy</a>
-      <a href="https://legal.citrapps.com/terms.html">terms</a>
-      <a href="https://legal.citrapps.com/kvkk.html">kvkk</a>
-      <a href="https://legal.citrapps.com/eula.html">eula</a>
+      <a href="https://legal.citrapps.com/privacy.html">Privacy Policy</a>
+      <a href="https://legal.citrapps.com/terms.html">Terms</a>
+      <a href="https://legal.citrapps.com/kvkk.html">KVKK</a>
+      <a href="https://legal.citrapps.com/eula.html">EULA</a>
     </div>
   </footer>
 </body>
