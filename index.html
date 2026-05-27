@@ -7,6 +7,12 @@
   <title>Citrapps</title>
   <meta name="description" content="Citrapps builds simple, focused digital products." />
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+  <meta name="theme-color" content="#f4f1eb" />
+
   <style>
     :root {
       --bg: #f4f1eb;
@@ -56,9 +62,20 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .nav {
@@ -313,6 +330,21 @@
       font-size: 14px;
     }
 
+    .footer-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      width: 44px;
+      height: 44px;
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
     .footer-left strong {
       color: var(--text);
     }
@@ -410,7 +442,10 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="/">Citrapps</a>
+      <a class="brand" href="/" aria-label="Citrapps home">
+        <img class="brand-logo" src="/assets/citrapps-logo.png" alt="" />
+        <span>Citrapps</span>
+      </a>
 
       <nav class="nav" aria-label="Main navigation">
         <a href="/">Home</a>
@@ -508,13 +543,17 @@
 
   <footer class="footer" id="contact">
     <div class="footer-left">
-      <strong>Citrapps</strong><br />
-      © 2026 Citrapps. All rights reserved.<br />
-      <a href="mailto:contact@citrapps.com">contact@citrapps.com</a>
+      <img class="footer-logo" src="/assets/citrapps-logo.png" alt="Citrapps logo" />
 
-      <div class="footer-names">
-        Barış Kayırtar<br />
-        Gürkan Toker
+      <div>
+        <strong>Citrapps</strong><br />
+        © 2026 Citrapps. All rights reserved.<br />
+        <a href="mailto:contact@citrapps.com">contact@citrapps.com</a>
+
+        <div class="footer-names">
+          Barış Kayırtar<br />
+          Gürkan Toker
+        </div>
       </div>
     </div>
 
