@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>idiomed | Citrapps</title>
   <meta name="description" content="idiomed is a medical education app by Citrapps." />
+
+  <link rel="icon" type="image/png" href="idiomed-app-icon.png" />
+  <link rel="apple-touch-icon" href="idiomed-app-icon.png" />
 
   <style>
     :root {
@@ -78,6 +81,11 @@
       font-size: 14px;
     }
 
+    .nav-download {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
     .brand:hover,
     .nav a:hover {
       color: var(--accent);
@@ -118,9 +126,11 @@
       color: var(--muted);
     }
 
-    .hero-actions {
+    .hero-actions,
+    .download-actions {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 12px;
       margin-top: 34px;
     }
@@ -156,6 +166,17 @@
       color: #ffffff;
     }
 
+    .app-store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-store-badge {
+      height: 48px;
+      width: auto;
+    }
+
     .hero-logo {
       min-height: 420px;
       display: flex;
@@ -166,9 +187,11 @@
       padding: 36px;
     }
 
-    .hero-logo img {
-      width: min(420px, 100%);
+    .hero-app-icon {
+      width: min(280px, 100%);
       height: auto;
+      border-radius: 24%;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
     }
 
     .section {
@@ -321,9 +344,9 @@
       font-size: 15px;
     }
 
-    .cta {
+    .download-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 32px;
       padding: 34px;
       border: 1px solid var(--border);
@@ -331,10 +354,34 @@
       align-items: center;
     }
 
-    .cta p {
-      margin: 0;
+    .download-copy p {
+      margin: 22px 0 0;
       color: var(--muted);
       font-size: 17px;
+      max-width: 560px;
+    }
+
+    .qr-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .qr-code {
+      width: min(220px, 100%);
+      height: auto;
+      background: #ffffff;
+    }
+
+    .qr-panel span {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer {
@@ -379,7 +426,7 @@
       .split-feature,
       .feature-row,
       .feature-row.reverse,
-      .cta {
+      .download-card {
         grid-template-columns: 1fr;
       }
 
@@ -423,12 +470,22 @@
       .hero p,
       .section-note,
       .feature-copy p,
-      .cta p {
+      .download-copy p {
         font-size: 16px;
       }
 
-      .hero-actions {
+      .hero-actions,
+      .download-actions {
         flex-direction: column;
+        align-items: stretch;
+      }
+
+      .app-store-link {
+        width: 100%;
+      }
+
+      .app-store-badge {
+        height: 46px;
       }
 
       .button {
@@ -436,13 +493,17 @@
       }
 
       .feature-row,
-      .cta {
+      .download-card {
         padding: 18px;
       }
 
       .visual-card,
       .feature-image {
         padding: 10px;
+      }
+
+      .qr-panel {
+        padding: 18px;
       }
     }
   </style>
@@ -457,6 +518,7 @@
         <a href="/">Home</a>
         <a href="#features">Features</a>
         <a href="#screens">Screens</a>
+        <a class="nav-download" href="#download">Download</a>
         <a href="https://legal.citrapps.com/">Legal</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -475,13 +537,30 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button" href="#features">View Features</a>
-          <a class="button secondary" href="https://legal.citrapps.com/">Legal Documents</a>
+          <a
+            class="app-store-link"
+            href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr"
+            target="_blank"
+            rel="noopener"
+            aria-label="Download idiomed on the App Store"
+          >
+            <img
+              class="app-store-badge"
+              src="app-store-badge.svg"
+              alt="Download on the App Store"
+            />
+          </a>
+
+          <a class="button secondary" href="#features">View Features</a>
         </div>
       </div>
 
       <div class="hero-logo">
-        <img src="idiomed-logo.png" alt="idiomed logo" />
+        <img
+          class="hero-app-icon"
+          src="idiomed-app-icon.png"
+          alt="idiomed app icon"
+        />
       </div>
     </section>
 
@@ -612,17 +691,42 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="cta">
-        <div>
-          <h2>Built by Citrapps for medical students.</h2>
+    <section class="section" id="download">
+      <div class="download-card">
+        <div class="download-copy">
+          <div class="section-label">Download</div>
+          <h2>Get idiomed on the App Store.</h2>
+
+          <p>
+            Start practicing with medical questions, explanations, flashcards,
+            and progress tracking from your iPhone or iPad.
+          </p>
+
+          <div class="download-actions">
+            <a
+              class="app-store-link"
+              href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Download idiomed on the App Store"
+            >
+              <img
+                class="app-store-badge"
+                src="app-store-badge.svg"
+                alt="Download on the App Store"
+              />
+            </a>
+          </div>
         </div>
 
-        <p>
-          idiomed is currently being developed as a focused medical education
-          product. Official legal documents for idiomed are available through
-          the Citrapps Legal Center.
-        </p>
+        <div class="qr-panel">
+          <img
+            class="qr-code"
+            src="idiomed-qr-code.png"
+            alt="QR code to download idiomed from the App Store"
+          />
+          <span>Scan to open idiomed on the App Store.</span>
+        </div>
       </div>
     </section>
   </main>
@@ -641,6 +745,7 @@
 
     <div class="footer-links">
       <a href="/">Citrapps</a>
+      <a href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr" target="_blank" rel="noopener">App Store</a>
       <a href="https://legal.citrapps.com/">Legal Center</a>
       <a href="https://legal.citrapps.com/privacy.html">Privacy Policy</a>
       <a href="https://legal.citrapps.com/terms.html">Terms</a>
