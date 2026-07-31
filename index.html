@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="apple-itunes-app" content="app-id=6764430778" />
+  <meta name="google-site-verification" content="QYoboOShbKoR2wocXvNJIuO1JfW1-ca5qsWgsuosVoo" />
+  
+  <title>Citrapps</title>
+  <meta name="description" content="Citrapps builds simple, focused digital products." />
 
-  <title>idiomed | Citrapps</title>
-  <meta name="description" content="idiomed is a medical education app by Citrapps." />
-
-  <link rel="icon" type="image/png" href="idiomed-app-icon.png" />
-  <link rel="apple-touch-icon" href="idiomed-app-icon.png" />
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+  <meta name="theme-color" content="#f4f1eb" />
 
   <style>
     :root {
-      --bg: #062856;
+      --bg: #f4f1eb;
       --surface: #ffffff;
-      --surface-soft: #f4f1eb;
-      --text: #ffffff;
-      --text-dark: #1a1a1a;
-      --muted: #c8d3e3;
-      --muted-dark: #666666;
-      --border: rgba(255, 255, 255, 0.22);
-      --border-dark: #d8d3c9;
-      --accent: #ff9d7a;
-      --teal: #4ebbb3;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --border: #d8d3c9;
+      --accent: #223a63;
+      --accent-2: #ece8e0;
       --max-width: 1120px;
     }
 
@@ -48,11 +48,6 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .site-header {
       border-bottom: 1px solid var(--border);
       background: var(--bg);
@@ -69,9 +64,20 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .nav {
@@ -82,14 +88,8 @@
       font-size: 14px;
     }
 
-    .nav-download {
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .brand:hover,
     .nav a:hover {
-      color: var(--accent);
+      color: var(--text);
     }
 
     .main {
@@ -99,10 +99,6 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 48px;
-      align-items: center;
       padding: 8px 0 80px;
       border-bottom: 1px solid var(--border);
     }
@@ -110,28 +106,22 @@
     .hero h1 {
       margin: 0;
       max-width: 760px;
-      font-size: clamp(56px, 9vw, 112px);
-      line-height: 0.9;
-      letter-spacing: -0.08em;
-      font-weight: 780;
-    }
-
-    .hero h1 span {
-      color: var(--accent);
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      font-weight: 750;
     }
 
     .hero p {
-      margin: 28px 0 0;
-      max-width: 620px;
+      margin: 26px 0 0;
+      max-width: 650px;
       font-size: 18px;
       color: var(--muted);
     }
 
-    .hero-actions,
-    .download-actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 12px;
       margin-top: 34px;
     }
@@ -142,247 +132,193 @@
       justify-content: center;
       min-height: 44px;
       padding: 0 18px;
-      border: 1px solid #ffffff;
-      background: #ffffff;
-      color: var(--bg);
+      border: 1px solid var(--text);
+      background: var(--text);
+      color: #ffffff;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .button.secondary {
       background: transparent;
-      color: #ffffff;
+      color: var(--text);
       border-color: var(--border);
     }
 
     .button:hover {
       background: var(--accent);
       border-color: var(--accent);
-      color: var(--bg);
-    }
-
-    .button.secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: #ffffff;
       color: #ffffff;
     }
 
-    .app-store-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .app-store-badge {
-      height: 48px;
-      width: auto;
-    }
-
-    .hero-logo {
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-      padding: 36px;
-    }
-
-    .hero-app-icon {
-      width: min(280px, 100%);
-      height: auto;
-      border-radius: 24%;
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+    .button.secondary:hover {
+      background: var(--surface);
+      border-color: var(--text);
+      color: var(--text);
     }
 
     .section {
-      padding: 78px 0;
+      padding: 72px 0;
       border-bottom: 1px solid var(--border);
     }
 
     .section-head {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      display: flex;
+      justify-content: space-between;
       align-items: end;
-      margin-bottom: 34px;
+      gap: 24px;
+      margin-bottom: 30px;
     }
 
     .section-label {
       font-size: 14px;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--text);
       margin-bottom: 8px;
     }
 
-    h2 {
+    .section h2 {
       margin: 0;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      font-weight: 760;
-    }
-
-    .section-note {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 520px;
-    }
-
-    .split-feature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .visual-card {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-      padding: 18px;
-    }
-
-    .visual-card img {
-      width: 100%;
-      max-height: 760px;
-      object-fit: contain;
-      background: var(--bg);
-    }
-
-    .visual-caption {
-      margin-top: 16px;
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
-
-    .visual-caption strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 6px;
-      color: #ffffff;
-    }
-
-    .visual-caption p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .feature-row {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 34px;
-      align-items: center;
-      margin-top: 28px;
-      border: 1px solid var(--border);
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .feature-row.reverse {
-      grid-template-columns: 1.05fr 0.95fr;
-    }
-
-    .feature-copy {
-      padding: 12px;
-    }
-
-    .feature-copy h3 {
-      margin: 0 0 16px;
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(30px, 4vw, 46px);
       line-height: 1.05;
       letter-spacing: -0.05em;
     }
 
-    .feature-copy h3 span {
-      color: var(--accent);
-    }
-
-    .feature-copy p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 500px;
-    }
-
-    .feature-image {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
-      padding: 16px;
-    }
-
-    .feature-image img {
-      width: 100%;
-      max-height: 740px;
-      object-fit: contain;
-      background: var(--bg);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-
-    .stat {
-      padding: 28px;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 10px;
-    }
-
-    .stat span {
+    .section-note {
+      max-width: 420px;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .download-card {
+    .product-card {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
-      padding: 34px;
+      grid-template-columns: 1fr 1fr;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-      align-items: center;
+      background: var(--surface);
     }
 
-    .download-copy p {
-      margin: 22px 0 0;
+    .product-card-link {
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .product-card-link:hover {
+      border-color: var(--accent);
+      background: #fbfaf7;
+    }
+
+    .product-card-link:hover .product-name {
+      color: var(--accent);
+    }
+
+    .product-card-link:hover .product-visual {
+      background-color: #e7e2d8;
+    }
+
+    .product-visual {
+      min-height: 420px;
+      border-right: 1px solid var(--border);
+      background-color: #ece8e0;
+      background-image: url('idiomed-cover.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .product-content {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .product-top {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .product-tag {
+      width: fit-content;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .product-name {
+      font-size: 42px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 750;
+      transition: color 0.15s ease;
+    }
+
+    .product-text {
       color: var(--muted);
       font-size: 17px;
       max-width: 560px;
     }
 
-    .qr-panel {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
+    .product-cta {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 4px;
+      padding: 10px 13px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
-      padding: 24px;
-      text-align: center;
-    }
-
-    .qr-code {
-      width: min(220px, 100%);
-      height: auto;
-      background: #ffffff;
-    }
-
-    .qr-panel span {
-      color: var(--muted);
+      color: var(--text);
       font-size: 14px;
+      font-weight: 650;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .product-card-link:hover .product-cta {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .feature {
+      padding: 18px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .feature span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .simple-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      background: transparent;
+    }
+
+    .simple-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
     }
 
     .footer {
@@ -396,8 +332,23 @@
       font-size: 14px;
     }
 
+    .footer-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      width: 44px;
+      height: 44px;
+      display: block;
+      object-fit: contain;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
     .footer-left strong {
-      color: #ffffff;
+      color: var(--text);
     }
 
     .footer-names {
@@ -413,29 +364,31 @@
     }
 
     .footer a:hover {
-      color: var(--accent);
+      color: var(--text);
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 900px) {
       .header-inner {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .hero,
-      .section-head,
-      .split-feature,
-      .feature-row,
-      .feature-row.reverse,
-      .download-card {
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-card {
         grid-template-columns: 1fr;
       }
 
-      .hero-logo {
+      .product-visual {
         min-height: 320px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
       }
 
-      .stats {
+      .simple-box {
         grid-template-columns: 1fr;
       }
 
@@ -456,134 +409,49 @@
         padding-right: 18px;
       }
 
-      .main {
-        padding-top: 52px;
-      }
-
       .hero {
-        padding-bottom: 60px;
+        padding-bottom: 56px;
       }
 
       .hero h1 {
-        font-size: 58px;
+        font-size: 46px;
       }
 
-      .hero p,
-      .section-note,
-      .feature-copy p,
-      .download-copy p {
+      .hero p {
         font-size: 16px;
       }
 
-      .hero-actions,
-      .download-actions {
+      .hero-actions {
         flex-direction: column;
-        align-items: stretch;
-      }
-
-      .app-store-link {
-        width: 100%;
-      }
-
-      .app-store-badge {
-        height: 46px;
       }
 
       .button {
         width: 100%;
       }
 
-      .feature-row,
-      .download-card {
-        padding: 18px;
+      .feature-list {
+        grid-template-columns: 1fr;
       }
 
-      .visual-card,
-      .feature-image {
-        padding: 10px;
-      }
-
-      .qr-panel {
-        padding: 18px;
+      .product-cta {
+        width: 100%;
+        justify-content: center;
       }
     }
-
-    /* Instagram/Facebook in-app browser workaround */
-    .iab-modal[hidden] {
-      display: none;
-    }
-
-    .iab-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.72);
-    }
-
-    .iab-dialog {
-      width: min(460px, 100%);
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      padding: 24px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-    }
-
-    .iab-dialog h2 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .iab-dialog p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .iab-steps {
-      margin: 16px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .iab-actions {
-      display: grid;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .iab-actions .button {
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .iab-copy-status {
-      min-height: 22px;
-      margin-top: 10px;
-      color: var(--accent);
-      font-size: 14px;
-      text-align: center;
-    }
-
   </style>
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="https://www.citrapps.com/">Citrapps</a>
+      <a class="brand" href="/" aria-label="Citrapps home">
+        <img class="brand-logo" src="/assets/citrapps-logo.png" alt="" />
+        <span>Citrapps</span>
+      </a>
 
       <nav class="nav" aria-label="Main navigation">
         <a href="/">Home</a>
-        <a href="#features">Features</a>
-        <a href="#screens">Screens</a>
-        <a class="nav-download" href="#download">Download</a>
+        <a href="#products">Products</a>
         <a href="https://legal.citrapps.com/">Legal</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -592,458 +460,111 @@
 
   <main class="main">
     <section class="hero">
-      <div>
-        <h1>Study medicine with <span>idiomed</span></h1>
+      <h1>Simple, focused digital products.</h1>
 
-        <p>
-          idiomed is a mobile education app for medical students, built for
-          question-based learning, flashcards, clinical explanations, progress
-          tracking, and focused exam preparation.
-        </p>
+      <p>
+        Citrapps builds practical mobile apps with clean design, useful features,
+        and a focus on everyday value.
+      </p>
 
-        <div class="hero-actions">
-          <a
-            class="app-store-link"
-            href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr"
-            target="_blank"
-            rel="noopener"
-            aria-label="Download idiomed on the App Store"
-          >
-            <img
-              class="app-store-badge"
-              src="app-store-badge.svg"
-              alt="Download on the App Store"
-            />
-          </a>
-
-          <a class="button secondary" href="#features">View Features</a>
-        </div>
-      </div>
-
-      <div class="hero-logo">
-        <img
-          class="hero-app-icon"
-          src="idiomed-app-icon.png"
-          alt="idiomed app icon"
-        />
+      <div class="hero-actions">
+        <a class="button" href="#products">View Products</a>
+        <a class="button secondary" href="https://legal.citrapps.com/">Legal Center</a>
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="products">
       <div class="section-head">
         <div>
-          <div class="section-label">Learning Experience</div>
-          <h2>Study anywhere, track everything.</h2>
+          <div class="section-label">Products</div>
+          <h2>Our first product</h2>
         </div>
 
         <div class="section-note">
-          Study on the go, then follow your subject performance with clear
-          analytics.
+          We are starting with a medical learning product built for students who
+          want practical and structured study tools.
         </div>
       </div>
 
-      <div class="split-feature">
-        <article class="visual-card">
-          <img src="1.png" alt="Study anywhere anytime screen" />
-          <div class="visual-caption">
-            <strong>Study anywhere, anytime</strong>
-            <p>
-              Choose branches, continue practice, and keep your study routine
-              accessible from your phone.
-            </p>
+      <a class="product-card product-card-link" href="https://www.citrapps.com/idiomed/" aria-label="Open idiomed product page">
+        <div class="product-visual" aria-label="idiomed visual"></div>
+
+        <div class="product-content">
+          <div class="product-top">
+            <div class="product-tag">medical education app</div>
+
+            <div class="product-name">idiomed</div>
+
+            <div class="product-text">
+              idiomed is a mobile educational platform for medical students,
+              offering question-based learning, flashcards, clinical case-style
+              study tools, and progress tracking.
+            </div>
+
+            <span class="product-cta">View idiomed page →</span>
           </div>
-        </article>
 
-        <article class="visual-card">
-          <img src="2.png" alt="Track your subjects screen" />
-          <div class="visual-caption">
-            <strong>Track your subjects</strong>
-            <p>
-              Follow your recent accuracy, daily question activity, and weak
-              areas from a simple progress view.
-            </p>
+          <div class="feature-list">
+            <div class="feature">
+              <strong>questions</strong>
+              <span>question-based learning for exam preparation</span>
+            </div>
+
+            <div class="feature">
+              <strong>flashcards</strong>
+              <span>fast review tools for repeated practice</span>
+            </div>
+
+            <div class="feature">
+              <strong>cases</strong>
+              <span>clinical case-style learning experience</span>
+            </div>
+
+            <div class="feature">
+              <strong>progress</strong>
+              <span>study tracking and performance overview</span>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="screens">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Core Tools</div>
-          <h2>Everything built around practice.</h2>
         </div>
-
-        <div class="section-note">
-          idiomed focuses on practical study tools: questions, explanations,
-          flashcards, and mistakes that can be reviewed again.
-        </div>
-      </div>
-
-      <article class="feature-row">
-        <div class="feature-image">
-          <img src="3.png" alt="Question bank and branches screen" />
-        </div>
-
-        <div class="feature-copy">
-          <h3><span>40,000+</span> questions across branches.</h3>
-          <p>
-            Practice with a large question pool organized by medical branches
-            and systems, so students can focus on the subjects they need most.
-          </p>
-        </div>
-      </article>
-
-      <article class="feature-row reverse">
-        <div class="feature-copy">
-          <h3>Detailed <span>explanations</span> that teach.</h3>
-          <p>
-            Review answer explanations and option analysis to understand why
-            the correct answer works and why the other options are wrong.
-          </p>
-        </div>
-
-        <div class="feature-image">
-          <img src="4.png" alt="Detailed explanation screen" />
-        </div>
-      </article>
-
-      <article class="feature-row">
-        <div class="feature-image">
-          <img src="5.png" alt="Flashcard screen" />
-        </div>
-
-        <div class="feature-copy">
-          <h3>Premade and custom <span>flashcards.</span></h3>
-          <p>
-            Review high-yield concepts quickly with premade flashcards or build
-            your own decks for repeated practice.
-          </p>
-        </div>
-      </article>
-
-      <article class="feature-row reverse">
-        <div class="feature-copy">
-          <h3>Master your <span>mistakes.</span></h3>
-          <p>
-            Return to previous incorrect questions, filter by subject, and turn
-            weak points into targeted review sessions.
-          </p>
-        </div>
-
-        <div class="feature-image">
-          <img src="6.png" alt="Incorrect questions review screen" />
-        </div>
-      </article>
+      </a>
     </section>
 
     <section class="section">
-      <div class="stats">
-        <div class="stat">
-          <strong>40,000+</strong>
-          <span>Question-based study content</span>
+      <div class="simple-box">
+        <div>
+          <h2>More products coming soon.</h2>
         </div>
 
-        <div class="stat">
-          <strong>20+</strong>
-          <span>Medical branches and study areas</span>
-        </div>
-
-        <div class="stat">
-          <strong>4</strong>
-          <span>Core tools: questions, explanations, flashcards, progress</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="download">
-      <div class="download-card">
-        <div class="download-copy">
-          <div class="section-label">Download</div>
-          <h2>Get idiomed on the App Store.</h2>
-
-          <p>
-            Start practicing with medical questions, explanations, flashcards,
-            and progress tracking from your iPhone or iPad.
-          </p>
-
-          <div class="download-actions">
-            <a
-              class="app-store-link"
-              href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr"
-              target="_blank"
-              rel="noopener"
-              aria-label="Download idiomed on the App Store"
-            >
-              <img
-                class="app-store-badge"
-                src="app-store-badge.svg"
-                alt="Download on the App Store"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="qr-panel">
-          <img
-            class="qr-code"
-            src="idiomed-qr-code.png"
-            alt="QR code to download idiomed from the App Store"
-          />
-          <span>Scan to open idiomed on the App Store.</span>
-        </div>
+        <p>
+          Citrapps will continue building focused apps with simple interfaces,
+          accessible design, and practical use cases.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer" id="contact">
     <div class="footer-left">
-      <strong>Citrapps / idiomed</strong><br />
-      © 2026 Citrapps. All rights reserved.<br />
-      <a href="mailto:contact@citrapps.com">contact@citrapps.com</a>
+      <img class="footer-logo" src="/assets/citrapps-logo.png" alt="Citrapps logo" />
 
-      <div class="footer-names">
-        Barış Kayırtar<br />
-        Gürkan Toker
+      <div>
+        <strong>Citrapps</strong><br />
+        © 2026 Citrapps. All rights reserved.<br />
+        <a href="mailto:contact@citrapps.com">contact@citrapps.com</a>
+
+        <div class="footer-names">
+          Barış Kayırtar<br />
+          Gürkan Toker
+        </div>
       </div>
     </div>
 
     <div class="footer-links">
-      <a href="https://www.citrapps.com/">Citrapps</a>
-      <a href="https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr" target="_blank" rel="noopener">App Store</a>
-      <a href="https://legal.citrapps.com/">Legal Center</a>
       <a href="https://legal.citrapps.com/privacy.html">Privacy Policy</a>
       <a href="https://legal.citrapps.com/terms.html">Terms</a>
+      <a href="https://legal.citrapps.com/kvkk.html">KVKK</a>
+      <a href="https://legal.citrapps.com/eula.html">EULA</a>
     </div>
   </footer>
-
-  <div
-    class="iab-modal"
-    id="inAppBrowserModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="inAppBrowserTitle"
-    hidden
-  >
-    <div class="iab-dialog">
-      <h2 id="inAppBrowserTitle">Continue outside Instagram</h2>
-      <p>
-        Instagram or Facebook may block App Store links inside its built-in
-        browser. We will try your external browser without requiring Chrome.
-      </p>
-
-      <ol class="iab-steps">
-        <li>Tap <strong>Open in external browser</strong> below.</li>
-        <li>If nothing happens, tap <strong>•••</strong> in the top-right.</li>
-        <li>Choose <strong>Open in external browser</strong> or <strong>Open in browser</strong>, then tap the App Store badge again.</li>
-      </ol>
-
-      <div class="iab-actions">
-        <a class="button" id="iabOpenExternal" href="#" rel="external">
-          Open in external browser
-        </a>
-        <button class="button secondary" id="iabCopyLink" type="button">
-          Copy App Store link
-        </button>
-        <button class="button secondary" id="iabClose" type="button">
-          Close
-        </button>
-      </div>
-
-      <div class="iab-copy-status" id="iabCopyStatus" aria-live="polite"></div>
-    </div>
-  </div>
-
-  <script>
-    (() => {
-      const APP_STORE_URL =
-        "https://apps.apple.com/tr/app/idiomed/id6764430778?l=tr";
-
-      const ua = navigator.userAgent || navigator.vendor || "";
-      const isInstagram = /Instagram/i.test(ua);
-      const isThreads = /Threads|Barcelona/i.test(ua);
-      const isFacebook = /FBAN|FBAV|FB_IAB|FBIOS|FB4A|Messenger/i.test(ua);
-      const isMetaInAppBrowser = isInstagram || isThreads || isFacebook;
-
-      const isIOS =
-        /iPhone|iPad|iPod/i.test(ua) ||
-        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-      const isAndroid = /Android/i.test(ua);
-
-      const modal = document.getElementById("inAppBrowserModal");
-      const openExternalLink = document.getElementById("iabOpenExternal");
-      const copyButton = document.getElementById("iabCopyLink");
-      const closeButton = document.getElementById("iabClose");
-      const copyStatus = document.getElementById("iabCopyStatus");
-
-      let fallbackTimer = null;
-      let navigationSucceeded = false;
-
-      function showModal() {
-        modal.hidden = false;
-        document.body.style.overflow = "hidden";
-        copyStatus.textContent = "";
-      }
-
-      function hideModal() {
-        modal.hidden = true;
-        document.body.style.overflow = "";
-        copyStatus.textContent = "";
-      }
-
-      function markNavigationAsSuccessful() {
-        navigationSucceeded = true;
-        window.clearTimeout(fallbackTimer);
-      }
-
-      function armFallback() {
-        navigationSucceeded = false;
-        window.clearTimeout(fallbackTimer);
-
-        fallbackTimer = window.setTimeout(() => {
-          if (!navigationSucceeded && document.visibilityState === "visible") {
-            showModal();
-          }
-        }, 1400);
-      }
-
-      function buildAndroidIntent(url) {
-        const destination = url.replace(/^https?:\/\//i, "");
-
-        return (
-          "intent://" +
-          destination +
-          "#Intent;" +
-          "scheme=https;" +
-          "action=android.intent.action.VIEW;" +
-          "category=android.intent.category.BROWSABLE;" +
-          "S.browser_fallback_url=" +
-          encodeURIComponent(url) +
-          ";end"
-        );
-      }
-
-      /*
-       * Important: this function must run directly inside the user's click
-       * event. Delaying the custom-scheme navigation can cause the WebView to
-       * reject it because the original user gesture has been lost.
-       */
-      function breakOutSynchronously(url) {
-        armFallback();
-
-        if (isIOS && (isInstagram || isThreads)) {
-          window.location.href =
-            "instagram://extbrowser/?url=" + encodeURIComponent(url);
-          return;
-        }
-
-        if (isIOS && isFacebook) {
-          const safariURL = "x-safari-" + url;
-          const openedWindow = window.open(safariURL, "_blank");
-
-          if (!openedWindow) {
-            window.location.href = safariURL;
-          }
-          return;
-        }
-
-        if (isAndroid) {
-          window.location.href = buildAndroidIntent(url);
-          return;
-        }
-
-        window.location.href = url;
-      }
-
-      function handleAppStoreClick(event) {
-        if (!isMetaInAppBrowser) {
-          return;
-        }
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        const url =
-          event.currentTarget.dataset.appStoreUrl ||
-          event.currentTarget.href ||
-          APP_STORE_URL;
-
-        breakOutSynchronously(url);
-      }
-
-      document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "hidden") {
-          markNavigationAsSuccessful();
-        }
-      });
-
-      window.addEventListener("pagehide", markNavigationAsSuccessful);
-      window.addEventListener("blur", () => {
-        window.setTimeout(() => {
-          if (document.visibilityState === "hidden") {
-            markNavigationAsSuccessful();
-          }
-        }, 80);
-      });
-
-      document.querySelectorAll('a[href*="apps.apple.com"]').forEach((link) => {
-        link.dataset.appStoreUrl = link.href || APP_STORE_URL;
-
-        if (isMetaInAppBrowser) {
-          /* Keep the real HTTPS href, but intercept the tap in capture phase. */
-          link.removeAttribute("target");
-          link.addEventListener("click", handleAppStoreClick, true);
-        }
-      });
-
-      openExternalLink.dataset.appStoreUrl = APP_STORE_URL;
-      openExternalLink.href = APP_STORE_URL;
-
-      if (isMetaInAppBrowser) {
-        openExternalLink.removeAttribute("target");
-        openExternalLink.addEventListener("click", handleAppStoreClick, true);
-      } else {
-        openExternalLink.target = "_blank";
-        openExternalLink.rel = "noopener";
-      }
-
-      copyButton.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(APP_STORE_URL);
-          copyStatus.textContent = "App Store link copied.";
-        } catch (error) {
-          const input = document.createElement("textarea");
-          input.value = APP_STORE_URL;
-          input.setAttribute("readonly", "");
-          input.style.position = "fixed";
-          input.style.opacity = "0";
-          document.body.appendChild(input);
-          input.select();
-
-          const copied = document.execCommand("copy");
-          input.remove();
-
-          copyStatus.textContent = copied
-            ? "App Store link copied."
-            : "Could not copy the link. Use the ••• menu and choose Open in browser.";
-        }
-      });
-
-      closeButton.addEventListener("click", hideModal);
-
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          hideModal();
-        }
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !modal.hidden) {
-          hideModal();
-        }
-      });
-    })();
-  </script>
-
 </body>
 </html>
